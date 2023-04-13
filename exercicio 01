@@ -1,0 +1,6 @@
+01_ //Construa um script que verifica se o número fornecido pelo usuário é maior do que 5 e menor ou igual a 15 (transcreva o código-fonte no espaço a seguir):
+num= int(input(''digite um numero:'') #le um número inteiro digitado pelo usuário
+if(num>5 and num <=15): #verifica se o número está entre 5 e 15,
+printf(''o numero esta entre 5 e 15'');
+else:# caso contrario
+printf(''o numero nao esta entre 5 e 15'')
