@@ -1,0 +1,31 @@
+02
+# Receber as medidas dos lados do triângulo
+lado1 = float(input("Digite a medida do primeiro lado: "))
+lado2 = float(input("Digite a medida do segundo lado: "))
+lado3 = float(input("Digite a medida do terceiro lado: "))
+
+# Verificar se as medidas formam um triângulo
+if lado1 + lado2 > lado3 and lado1 + lado3 > lado2 and lado2 + lado3 > lado1:
+    # Verificar se o triângulo é equilátero
+    if lado1 == lado2 and lado1 == lado3:
+        print("O triângulo é equilátero ou não)
+#!/bin/bash
+
+#Ler as três medidas do triângulo
+echo "Digite as medidas do triângulo:"
+read a b c
+
+#Verificar se as medidas formam um triângulo
+if [ $(($a + $b)) -le $c -o $(($a + $c)) -le $b -o $(($b + $c)) -le $a ]; then
+  echo "As medidas não formam um triângulo"
+  exit
+
+#Verificar se é um triângulo equilátero
+if [ $a -eq $b -a $b -eq $c ]; then
+  echo "O $(($b*$b)) -o $(($b*$b + $c*$c)) -eq $(($a*$a)) ]; then
+  echo "O triângulo é retângulo"
+else
+  echo "O triângulo não é retângulo"
+fi
+
+#Fim do script
