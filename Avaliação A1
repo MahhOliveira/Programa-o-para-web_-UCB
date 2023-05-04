@@ -1,0 +1,90 @@
+1- Qual será o resultado da execução do código  function faz (n){
+ var s= n.toString();
+var variável = 0;
+for (var char of s) {
+var d = parseInt(char);
+variavel += d;
+}
+return variavel;
+}
+var resultado = faz(123123);
+console.log(''resultado:'', resultado);
+
+Resposta:
+O resultado da execução do código será a impressão no console do valor 12, que é a soma dos dígitos de 123123.
+
+2- A função declarada na linha 1 recebe um parâmetro.
+
+3- O código HTML para inserir um botão com o texto "Clique para ver o texto" é:
+
+html
+<button onclick="alert('Ao clicar no botão acima, este texto aparece')">Clique para ver o texto</button>
+
+
+4- O código HTML e JavaScript para mostrar o texto "Ao clicar no botão acima, este texto aparece" somente ao clicar no botão "Clique para ver o texto" é:
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo de botão</title>
+</head>
+<body>
+	<button id="botao">Clique para ver o texto</button>
+	<script>
+		const botao = document.getElementById('botao');
+		botao.addEventListener('click', function() {
+			alert('Ao clicar no botão acima, este texto aparece');
+		});
+	</script>
+</body>
+</html>
+5- O código JavaScript para exibir uma caixa de diálogo com a mensagem "Olá!" utilizando o método `alert()` é:
+
+js
+alert('Olá!');
+
+6- O código define uma classe `Retangulo` que possui uma altura e largura e um método `calcArea()` que calcula a área do retângulo multiplicando a altura pela largura. Em seguida, um objeto `quadrado` é criado a partir da classe `Retangulo` com altura e largura iguais a 10. A chamada do método `area` do objeto `quadrado` resulta na impressão no console do valor 100, que é o resultado do cálculo da área do quadrado.
+
+O resultado impresso no console será:
+
+
+100
+
+
+7- Código HTML e JavaScript para a aplicação:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de IMC</title>
+</head>
+<body>
+	<h1>Calculadora de IMC</h1>
+	<form>
+		<label for="peso">Informe seu peso (kg):</label>
+		<input type="number" id="peso" name="peso" required><br><br>
+		<label for="altura">Informe sua altura (m):</label>
+		<input type="number" id="altura" name="altura" step="0.01" required><br><br>
+		<button id="calcular">Calcular IMC</button>
+	</form>
+	<div id="resultado"></div>
+	<script>
+		const calcular = document.getElementById('calcular');
+		calcular.addEventListener('click', function() {
+			const peso = parseFloat(document.getElementById('peso').value);
+			const altura = parseFloat(document.getElementById('altura').value);
+			const imc = peso / (altura * altura);
+			let classificacao = '';
+if (imc < 18.5) {
+				classificacao = 'Abaixo do peso';
+			} else if (imc < 25) {
+				classificacao = 'Peso normal';
+			} else if (imc < 30) {
+				classificacao = 'Sobrepeso';
+			} else {
+				classificacao = 'Obesidade';
+			}
+			const resultado = document.getElementById('resultado');
+			resultado.innerHTML = `Seu IMC é ${
