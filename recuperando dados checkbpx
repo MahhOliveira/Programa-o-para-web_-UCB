@@ -1,0 +1,61 @@
+fieldset>
+<legend><b>Selecione os estados: </b></legend><br>
+<input type="checkbox" class="estados" id="Acre" name="estado" value=“Acre">
+<label for="Acre">Acre</label><br>
+<input type="checkbox" class="estados" id="Goias" name="estado" value="Goiás">
+<label for="Goias">Goiás</label><br>
+<input type="checkbox" class="estados" id="Maranhao" name="estado" value=“Maranhão">
+<label for="Maranhao">Maranhão</label><br>
+<input type="checkbox" class="estados" id="Df" name="estado" value=“Distrito Federal">
+<label for="Df">Distrito Federal</label><br>
+<input type="checkbox" class="estados" id="Rj" name="estado" value=“Rio de Janeiro">
+<label for="Rj">Rio de Janeiro</label><br>
+<input type="checkbox" class="estados" id="Sp" name="estado" value=“São Paulo">
+<label for="Sp">São Paulo</label><br>
+<input type="checkbox" class="estados" id="Bahia" name="estado" value=“Bahia">
+<label for="Bahia">Bahia</label><br>
+<input type="checkbox" class="estados" id="Para" name="estado" value=“PArá">
+<label for="Para">Pará</label><br>
+</fieldset>
+<br>
+<button id="montar-lista" class="btnMontarLista">Verificar</button>
+var montarLista = document.querySelector("#montar-lista");
+montarLista.addEventListener("click", function (){
+var Str = "";
+var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+for (var i = 0; i < checkboxes.length; i++) {
+Str = Str + i + ") " + checkboxes[i].id + " " + checkboxes[i].value + "<br>"
+}
+document.getElementById("Resposta").innerHTML = Str;
+}
+);
+<body>
+<fieldset>
+<legend><b>Selecione os estados que você visitou: </b></legend><br>
+<input type = "checkbox" id = "AC" name = "Estado" value ="Acre">
+<label for = "Acre">Acre</label>
+<input type = "checkbox" id = "BA" name = "Estado" value ="Bahia">
+<label for = "Bahia">Bahia</label>
+<input type = "checkbox" id = "CE" name = "Estado" value ="Ceará">
+<label for = "Ceará">Ceará</label>
+<input type = "checkbox" id = "MG" name = "Estado" value ="Minas Gerais">
+<label for = "Minas Gerais">Minas Gerais</label>
+<input type = "checkbox" id = "SP" name = "Estado" value ="São Paulo">
+<label for = "São Paulo">São Paulo</label>
+<button id="montar-lista" class="btnMontarLista">Montar Lista</button>
+<p id = "Resposta">Obs: Os estados selecionados serão montados em uma lista!</p><br>
+</fieldset>
+<script> ... </script>
+</body>
+<script>
+var montarLista = document.querySelector("#montar-lista");
+montarLista.addEventListener ("click", function(){
+var Str = "";
+var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+for (var i = 0; i < checkboxes.length; i++)
+Str = Str + i + " " + checkboxes[i].id + " " + checkboxes[i].value + "<br>";
+document.getElementById("Resposta").innerHTML = Str;
+}
+);
+</script>
+</body>
