@@ -1,0 +1,27 @@
+fun.call(thisArg[, arg1[, arg2[, ...]]])
+<script>
+function sayThis(n1, n2){
+document.write(this * n1 * n2);
+}
+sayThis.call(2, 3, 3)
+sayThis.call(1, 3, 3)
+</script>
+<script>
+function sayAnyCharacter() {
+document.write(this.name + ": " + this.character);
+};
+var actor1 = { name:"Antônio Fagundes", character: "A" };
+var actor2 = { name:"Tony Ramos", character: "T"};
+sayAnyCharacter.call(actor1);
+sayAnyCharacter.call(actor2);
+</script>
+<script>
+const article = {
+title: 'Descomplicando call, apply e bind',
+language: 'JavaScript',
+};
+function print() {
+document.write(`${this.title}` + " em " + `${this.language}.`);
+}
+print();
+</script>
