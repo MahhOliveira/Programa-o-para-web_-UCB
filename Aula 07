@@ -25,3 +25,103 @@ document.write(`${this.title}` + " em " + `${this.language}.`);
 }
 print();
 </script>
+
+02- fun.apply(thisArg, [argsArray])
+<script>
+function sayThis(n1,n2){
+document.write(this * n1 * n2);
+}
+sayThis.apply(2, [3, 3])
+sayThis.apply(1, [3, 3])
+</script>
+<script>
+function Soma(PrimeiroNumero, SegundoNumero) {
+const suma = this + PrimeiroNumero + SegundoNumero;
+document.write(suma);
+}
+Soma.apply(5, [2, 7]); // 14
+</script>
+<script>
+function mediaArray(ar) {
+var n = ar.length;
+var soma = 0;
+for (var i = 0; i < n; i++) {
+soma = soma + ar[i];
+}
+return (soma / n);
+}
+var ar = [1, 3, 9, 15, 80];
+var media = mediaArray(ar);
+console.log("mediaArray: ", media);
+</script>
+//utilizando o call
+<script>
+function Media() {
+var N = this.length;
+var Soma = 0;
+for (var i = 0; i < N; i++) Soma = Soma + this[i];
+return(Soma / N);
+}
+var X = [1, 5, 9, 7, -1, 1.8];
+var m = Media.call(X);
+console.log("Média: ", m);
+// Primeiro elemento: X[0]
+// Último elemento: X[5]
+</script>
+<script>
+function Maior() {
+var N = this.length;
+var Maior = this[0];
+for (var i = 0; i < N; i++)
+if (this[i] > Maior)
+Maior = this[i];
+return(Maior);
+}
+var X = [1, 5, 9, 7, -1, 1.8];
+var m = Maior.call(X);
+console.log("Maior: ", m);
+// Primeiro elemento: X[0]
+// Último elemento: X[5]
+</script>
+script>
+function SomaAlgarismo(X) {
+var S = X.toString();
+var Soma = 0;
+for (var char of S) Soma += parseInt(char);
+// Soma += (...) é equivalente a Soma = Soma + (...)
+return(Soma);
+}
+var X = 123456789;
+var m = SomaAlgarismo(X);
+console.log("Soma: ", m);
+</script>
+<script>
+function contarPalavras(text) {
+var existe_separador = true;
+var palavras = 0;
+for (var c of text) {
+if (separador (c)) {
+existe_separador = true;
+continue;
+}
+if (existe_separador) {
+palavras ++;
+existe_separador = false;
+}
+}
+return palavras;
+}
+function separador(c) {
+var separadores = [" ", "\t", "\n", "\r", ",", ";", ".", "!", "?"];
+return separadores.includes(c);
+}
+</script>
+<script>
+function inverterArray(ar){
+var ar2 = [];
+for(var i = ar.length - 1; i >= 0; i--) {
+ar2.push(ar[i]);
+}
+return ar2;
+}
+</script>
