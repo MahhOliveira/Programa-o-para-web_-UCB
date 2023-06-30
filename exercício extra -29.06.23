@@ -1,0 +1,112 @@
+Em Java, você pode usar a classe `StringBuilder` para criar uma sequência de caracteres e construir a string do banco de dados. Aqui está um exemplo básico:
+
+java
+StringBuilder sb = new StringBuilder();
+
+sb.append("CREATE DATABASE mydatabase;");
+sb.append("USE mydatabase;");
+sb.append("CREATE TABLE users (");
+sb.append("id INT PRIMARY KEY,");
+sb.append("name VARCHAR(50),");
+sb.append("email VARCHAR(50)");
+sb.append(");");
+
+String sql = sb.toString();
+System.out.println(sql);
+
+
+Questão 02:
+Abaixo está o código-fonte para a criação do formulário (módulo cliente) em Java:
+
+java
+import java.util.Scanner;
+
+public class Formulario {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int opcao = 0;
+        
+        while (opcao != 5) {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Cadastrar usuário");
+            System.out.println("2 - Efetuar login");
+            System.out.println("3 - Recuperar senha");
+            System.out.println("4 - Excluir usuário");
+            System.out.println("5 - Sair");
+            
+            opcao = scanner.nextInt();
+            
+            switch (opcao) {
+                case 1:
+                    // Lógica para cadastrar usuário
+                    break;
+case 2:
+                    // Lógica para efetuar login
+                    break;
+                case 3:
+                    // Lógica para recuperar senha
+                    break;
+                case 4:
+                    // Lógica para excluir usuário
+                    break;
+                case 5:
+                    System.out.println("Encerrando programa...");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Escolha novamente.");
+                    break;
+            }
+        }
+        
+        scanner.close();
+
+    }
+
+}
+
+Questão 03:
+A seguir está o código-fonte que verifica se login e senha estão corretos:
+
+java
+// Supondo que exista uma classe Usuario com os atributos login e senha
+
+public boolean verificarCredenciais(String login, String senha) {
+    for (Usuario usuario : usuarios) {
+        if (usuario.getLogin().equals(login) && usuario.getSenha().equals(senha)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+Questão 04:
+Aqui está um exemplo de fragmento de código do módulo servidor que permite a redefinição de senha:
+
+java
+// Supondo que exista uma classe Usuario com o método setSenha()
+
+public boolean redefinirSenha(String nomeCompleto, String login, String novaSenha) {
+    for (Usuario usuario : usuarios) {
+        if (usuario.getNomeCompleto().equals(nomeCompleto) && usuario.getLogin().equals(login)) {
+            usuario.setSenha(novaSenha);
+            return true;
+Questão 05:
+A seguir está um exemplo de fragmento de código do módulo servidor que permite o cadastramento de novo usuário:
+
+java
+// Supondo que exista uma classe Usuario com os atributos nomeCompleto, email, login e senha
+
+public boolean cadastrarUsuario(String nomeCompleto, String email, String login, String senha) {
+    for (Usuario usuario : usuarios) {
+        if (usuario.getLogin().equals(login)) {
+            return false; // Já existe um usuário com esse login
+        }
+    }
+    
+ Usuario novoUsuario = new Usuario(nomeCompleto, email, login, senha);
+    usuarios.add(novoUsuario);
+    return true;
+}
+
