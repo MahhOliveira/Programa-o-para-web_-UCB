@@ -1,4 +1,4 @@
-Em Java, você pode usar a classe `StringBuilder` para criar uma sequência de caracteres e construir a string do banco de dados. Aqui está um exemplo básico:
+01- Em Java, você pode usar a classe `StringBuilder` para criar uma sequência de caracteres e construir a string do banco de dados. Aqui está um exemplo básico:
 
 java
 StringBuilder sb = new StringBuilder();
@@ -100,6 +100,14 @@ java
 
 public boolean cadastrarUsuario(String nomeCompleto, String email, String login, String senha) {
     for (Usuario usuario : usuarios) {
+Questão 09:
+Algumas melhorias que poderiam ser implementadas no sistema seriam:
+
+1) Implementar criptografia de senhas: Para garantir a segurança dos usuários, as senhas devem ser armazenadas no banco de dados de forma criptografada. Isso evita que as senhas sejam comprometidas caso haja uma violação no banco de dados.
+
+2) Limitar o número de tentativas de login: Atualmente, o sistema não limita o número de tentativas de login mal sucedidas. Implementar um mecanismo que limite o número de tentativas pode ajudar a prevenir ataques de força bruta.
+
+3) Adicionar validação de campos no cadastro: Atualmente, não há validação nos campos do formulário de cadastro. Adicionar validações, como formato de e-mail válido ou senhas fortes, ajudaria a garantir a integridade dos dados do usuário.
         if (usuario.getLogin().equals(login)) {
             return false; // Já existe um usuário com esse login
         }
